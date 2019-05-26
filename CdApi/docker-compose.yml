@@ -1,0 +1,14 @@
+﻿version: "3.7"
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    ports:
+      - "1433:1433"
+    volumes:
+      - data:/var/opt/mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Development_Password&2
+
+volumes:
+  data:
